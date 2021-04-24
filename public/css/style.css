@@ -1,0 +1,29 @@
+body {
+    margin: 2rem;
+  }
+  /*
+  th {
+    background-color: white;
+  }
+  tr:nth-child(odd) {
+    background-color: grey;
+  }
+  th, td {
+    padding: 0.5rem;
+  }
+  td:hover {
+    background-color: lightsalmon;
+  }
+  */
+  .paginate_button {
+    border-radius: 0 !important;
+  }
+
+  .svg{
+    position:absolute;
+    width:80px;
+    height:80px;
+    bottom:0;
+    right:10px;
+  }
+  
