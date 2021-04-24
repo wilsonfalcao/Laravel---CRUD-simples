@@ -7,11 +7,10 @@ use App\Models\CruDataBase;
 
 class FormController extends Controller
 {
-    public function index($id = null){
+    public function cliente($id = null){
         $ModelData = new CruDataBase();
-        return view("test",["data"=>$ModelData->ListData($id)]);
+        return view("cliente",["data"=>$ModelData->ListData($id)]);
     }
-
     public function clientformsend(Request $data){
 
         if($this->validHTTP_POST($data)){
@@ -54,9 +53,93 @@ class FormController extends Controller
         return response('Error HTTP POST', 400)
                   ->header('Content-Type', 'text/plain');
     }
+    public function clientdelete(Request $data){
+        if($this->validHTTP_POST($data)){
+            $ModelData = new CruDataBase();
+            $status = $ModelData->DeleteClient($data);
+            if(
+                $status ==1
+            ){
+                return response('Cadastrado!!!', 200)
+                  ->header('Content-Type', 'text/plain');
+            }else{
 
+                return response($status, 400)
+                  ->header('Content-Type', 'text/plain');
+
+            }
+        }
+        return response('Error HTTP POST', 400)
+                  ->header('Content-Type', 'text/plain');
+    }
+
+    public function contato($id = null){
+        $ModelData = new CruDataBase();
+
+        return view("contatos",[
+            "data"=>$ModelData->ListDataContatos($id),
+            "clientes"=>$ModelData->ListData(),
+        ]);
+    }
     public function contatoformsend(Request $data){
-        return response('Cadastrado!!!', 200)
+
+        if($this->validHTTP_POST($data)){
+            $ModelData = new CruDataBase();
+            $status = $ModelData->InserdataContatos($data);
+
+            if(
+                $status ==1
+            ){
+                return response('Cadastrado!!!', 200)
+                  ->header('Content-Type', 'text/plain');
+            }else{
+
+                return response($status, 400)
+                  ->header('Content-Type', 'text/plain');
+
+            }
+        }
+        return response('Error HTTP POST', 400)
+                  ->header('Content-Type', 'text/plain');
+    }
+    public function contatoformupdate(Request $data){
+
+        if($this->validHTTP_POST($data)){
+            $ModelData = new CruDataBase();
+            $status = $ModelData->UpdatedataContatos($data);
+            return $status;
+            if(
+                $status ==1
+            ){
+                return response('Cadastrado!!!', 200)
+                  ->header('Content-Type', 'text/plain');
+            }else{
+
+                return response($status, 400)
+                  ->header('Content-Type', 'text/plain');
+
+            }
+        }
+        return response('Error HTTP POST', 400)
+                  ->header('Content-Type', 'text/plain');
+    }
+    public function contatodelete(Request $data){
+        if($this->validHTTP_POST($data)){
+            $ModelData = new CruDataBase();
+            $status = $ModelData->DeleteContatos($data);
+            if(
+                $status ==1
+            ){
+                return response('Cadastrado!!!', 200)
+                  ->header('Content-Type', 'text/plain');
+            }else{
+
+                return response($status, 400)
+                  ->header('Content-Type', 'text/plain');
+
+            }
+        }
+        return response('Error HTTP POST', 400)
                   ->header('Content-Type', 'text/plain');
     }
 

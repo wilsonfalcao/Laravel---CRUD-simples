@@ -22,9 +22,7 @@
      <script type="text/javascript" src="{{asset('js/jquery-3-6.min.js')}}"></script>
      <script type="text/javascript" src="{{asset('js/bootstrap-3-7.min.js')}}"></script>
      <script type="text/javascript" src="{{asset('js/jquery-datatables.js')}}"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-     <script type="text/javascript" src="{{asset('js/crud.js')}}"></script>
-
+     @yield('javasready')
     </body>
 
 </html>

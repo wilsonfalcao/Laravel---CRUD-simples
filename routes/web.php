@@ -19,10 +19,15 @@ Route::get('/', function () {
 });
 
 //Index de cadastramento
-Route::get('cadastro',[FormController::class,"index"]);
+Route::get('cliente',[FormController::class,"cliente"]);
+Route::get('contato',[FormController::class,"contato"]);
 
 //Método de Cadastro Cliente e Contatos
+//Clientes
 Route::post('/sendform/client',[FormController::class,"clientformsend"]);
 Route::post('/sendform/clientup',[FormController::class,"clientformupdate"]);
-
-Route::post('/sendform/contato',[FormController::class,"clientformsend"]);
+Route::post('/sendform/delete-client',[FormController::class,"clientdelete"]);
+//Contatos
+Route::post('/sendform/contato',[FormController::class,"contatoformsend"]);
+Route::post('/sendform/contatup',[FormController::class,"contatoformupdate"]);
+Route::post('/sendform/delete-contato',[FormController::class,"contatodelete"]);
