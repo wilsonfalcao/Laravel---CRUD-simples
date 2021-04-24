@@ -4,7 +4,7 @@ Usando de recursos do framework de forma simples
 
 ### Objetivo
 
-Utilizar banco de dados MySQL com funções de insert, update e delete. Utilização do JQuery e Bootstrap.
+Utilizar banco de dados MySQL com funções de insert, update e delete. Utilização do JQuery, JQuery DataTables, JQuery Mask e Bootstrap.
 
 #### Imagens
 <table style="width:100%">
